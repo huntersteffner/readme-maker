@@ -10,7 +10,7 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'Please enter a brief description of your project and what the application is supposed to.'
+        message: 'Please enter a brief description of your project and what the application is supposed to do.'
     },
     {
         type: 'input',
@@ -58,7 +58,7 @@ inquirer.prompt(questions).then((data) => {
     })
 })
 
-const readmeTemplate = ({name,description,installation,usage,contribution,github, email, license}) => `# ${name}
+const readmeTemplate = ({name,description,installation,usage,contribution,github, email, license, test}) => `# ${name}
 [![License](https://img.shields.io/badge/License-${license}-blue.svg)]
 
 ## Table of Contents
