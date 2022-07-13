@@ -1,30 +1,38 @@
-# e
+# Mario
+[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)]
 
 ## Table of Contents
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
+* [License](#license)
 * [Contribution](#contribution)
 * [Contact](#contact)
 
 ## Description
-e
+It runs
 
 ## Installation
 You will need to run the following installation commands in your terminal in order to run this program:
 
-e
+Just do it!
 
 ## Usage
 
-e
+Push the button
+
+## License
+
+GPLv3
 
 ## Contribution
 
-e
+Ask me nicely
 
-## Contact
+## Questions
 
-GitHub: e
+Feel free to reach out to me directly if you have any questions or concerns. You can reach me via email, or check out my github profile below.
 
-Email: e
+Email: huntersteffner@gmail.com
+
+GitHub: [huntersteffner](https://github.com/huntersteffner/)

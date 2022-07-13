@@ -1,9 +1,6 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 
-let answers
-
-// TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -40,6 +37,12 @@ const questions = [
         name: 'email',
         message: 'What is your email address?'
     },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Select which license you would like to use for your program.',
+        choices: ['BSD_3','GPLv3','MIT', 'Apache_2.0', ]
+    }
 ];
 
 inquirer.prompt(questions).then((data) => {
@@ -50,19 +53,14 @@ inquirer.prompt(questions).then((data) => {
     })
 })
 
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
-
-const readmeTemplate = ({name,description,installation,usage,contribution,github, email}) => `# ${name}
+const readmeTemplate = ({name,description,installation,usage,contribution,github, email, license}) => `# ${name}
+[![License](https://img.shields.io/badge/License-${license}-blue.svg)]
 
 ## Table of Contents
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
+* [License](#license)
 * [Contribution](#contribution)
 * [Contact](#contact)
 
@@ -78,12 +76,18 @@ ${installation}
 
 ${usage}
 
+## License
+
+${license}
+
 ## Contribution
 
 ${contribution}
 
-## Contact
+## Questions
 
-GitHub: ${github}
+Feel free to reach out to me directly if you have any questions or concerns. You can reach me via email, or check out my github profile below.
 
-Email: ${email}`
+Email: ${email}
+
+GitHub: [${github}](https://github.com/${github}/)`
