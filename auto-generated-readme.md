@@ -10,18 +10,18 @@
 * [Contact](#contact)
 
 ## Description
-This program prompts the user with a series of questions and then generates a readme file based off the answers the user inputs.
+When running in the terminal, it prompts the user with a series of questions that it then takes to automatically generate a readme file.
 
 ## Installation
 You will need to run the following installation commands in your terminal in order to run this program:
 
-npm init -y
+Run npm init -y
 
 ## Usage
 
 For usage instructions, please do the following:
 
-Enter node index.js into your terminal. You will then be prompted with a series of questions. Answer each question and it will then generate a readme file titled "auto-generated-readme.md"
+Run node index.js in the terminal. Answer the series of questions
 
 ## License
 
@@ -31,11 +31,11 @@ This was made with the license of MIT
 
 For testing purposes, please do the following:
 
-Simply run node index.js and enter the commands to test
+Run node index.js
 
 ## Contribution
 
-You may contact me directly. Anyone can contribute, but please provide credit to the original work.
+Please contact me directly
 
 ## Questions
 
