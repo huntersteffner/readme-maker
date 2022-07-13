@@ -1,7 +1,7 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 
-let answers = 'smile'
+let answers
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -28,14 +28,24 @@ const questions = [
     {
         type: 'input',
         name: 'contribution',
-        message: 'Yes'
-    }
+        message: 'Please enter instructions if anyone would like to contribute.'
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Enter your GitHub username'
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email address?'
+    },
 ];
 
 inquirer.prompt(questions).then((data) => {
     // console.log(data)
-    answers = data
-    fs.writeFile('test-readme.md', 'data', (err) => {
+    const templateWithData = readmeTemplate(data)
+    fs.writeFile('test-readme.md', templateWithData, (err) => {
         if(err) {console.error(err)} else {console.log('Success')}
     })
 })
@@ -46,3 +56,34 @@ function init() {}
 
 // Function call to initialize app
 init();
+
+const readmeTemplate = ({name,description,installation,usage,contribution,github, email}) => `# ${name}
+
+## Table of Contents
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contribution](#contribution)
+* [Contact](#contact)
+
+## Description
+${description}
+
+## Installation
+You will need to run the following installation commands in your terminal in order to run this program:
+
+${installation}
+
+## Usage
+
+${usage}
+
+## Contribution
+
+${contribution}
+
+## Contact
+
+GitHub: ${github}
+
+Email: ${email}`
