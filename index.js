@@ -42,13 +42,18 @@ const questions = [
         name: 'license',
         message: 'Select which license you would like to use for your program.',
         choices: ['BSD_3','GPLv3','MIT', 'Apache_2.0', ]
+    },
+    {
+        type: 'input',
+        name: 'test',
+        message: 'Please provide instructions needed for users to test.'
     }
 ];
 
 inquirer.prompt(questions).then((data) => {
     // console.log(data)
     const templateWithData = readmeTemplate(data)
-    fs.writeFile('test-readme.md', templateWithData, (err) => {
+    fs.writeFile('auto-generated-readme.md', templateWithData, (err) => {
         if(err) {console.error(err)} else {console.log('Success')}
     })
 })
@@ -74,11 +79,19 @@ ${installation}
 
 ## Usage
 
+For usage instructions, please do the following:
+
 ${usage}
 
 ## License
 
-${license}
+This was made with the license of ${license}
+
+## Test
+
+For testing purposes, please do the following:
+
+${test}
 
 ## Contribution
 
